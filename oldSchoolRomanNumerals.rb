@@ -1,44 +1,40 @@
 def old_roman_numerals num
 # I =1 V=5 X=10 L=50 C=100 D=500 M=1000
+output = ""
 
-if num < 5
-  puts "I" * num
+  while num > 0
+    if num >= 1000
+      output << "M" * (num / 1000)
+      num = num - (1000 * (num/1000))
+    end
+    if num >= 500
+      output << "D" * (num / 500)
+      num = num - (500 * (num/500))
+    end
+    if num >= 100
+      output << "C" * (num / 100)
+      num = num - (100 * (num/100))
+    end
+    if num >= 50
+      output << "L" * (num / 50)
+      num = num - (50 * (num/50))
+    end
+    if num >= 10
+      output << "X" * (num/10)
+      num = num - (10 * (num/10))
+    end
+    if num >= 5
+      output << "V" * (num / 5)
+      num = num - (5 * (num/5))
+    end
+    output << "I" * num
+    num = 0
+  end
+
+  puts output
 end
 
-# puts num / 5
-# puts (num % 5) * "I"
-
-  # if num >= 10
-  #   ones = num % 10
-  #   puts "X" + ("I" * ones)
-  # elsif num < 5
-  #   puts "I" * num
-  # elsif num >= 5
-  #   ones = num % 5
-  #   puts "V" + ("I" * ones)
-  # end
+(500..3012).each do |n|
+  puts n
+  puts old_roman_numerals n
 end
-
-
-old_roman_numerals 1
-old_roman_numerals 2
-old_roman_numerals 3
-old_roman_numerals 4
-old_roman_numerals 5
-old_roman_numerals 6
-old_roman_numerals 7
-old_roman_numerals 8
-old_roman_numerals 9
-puts "10"
-old_roman_numerals 10
-old_roman_numerals 11
-old_roman_numerals 12
-old_roman_numerals 13
-old_roman_numerals 14
-old_roman_numerals 15
-old_roman_numerals 16
-old_roman_numerals 17
-old_roman_numerals 18
-old_roman_numerals 19
-old_roman_numerals 20
-old_roman_numerals 21
