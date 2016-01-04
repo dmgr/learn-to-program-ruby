@@ -1,10 +1,15 @@
+puts "Give me some words and I'll sort them for you"
 wordList = [];
 
 while true
   input = gets.chomp
-  wordList.push input
   if input == ''
-    puts wordList.sort
+
     break
   end
+
+  wordList.push input
 end
+
+puts "Sweet, I've sorted them for ya:"
+puts wordList.sort
