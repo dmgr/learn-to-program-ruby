@@ -3,6 +3,7 @@ def old_roman_numerals num
 output = ""
 
   while num > 0
+
     if num >= 1000
       output << "M" * (num / 1000)
       num = num - (1000 * (num/1000))
