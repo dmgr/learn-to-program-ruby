@@ -14,7 +14,7 @@ world = [[o,o,o,o,o,o,M,o,o,o,o],
          [o,o,o,o,o,M,o,o,o,o,o]]
 
 def continent_size world, x, y
-  if world[x] == nil || world[y] == nil
+  if world[x] == nil || world[x][y] == nil
     return 0
   end
 
